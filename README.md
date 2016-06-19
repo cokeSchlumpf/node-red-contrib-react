@@ -60,7 +60,7 @@ The lights are your output devices. You also have some devices which are sending
 
 Now it would be very simple to wire all these devices within a Node-RED flow:
 
-_______ PICTURE _______
+![Example flow](https://raw.githubusercontent.com/cokeSchlumpf/node-red-react/master/docs/flow.png)
 
 How would the logic between your devices look like? If you think about it, it can be very complex - At least if you increase the number of possible input events and output devices. With `node-red-react` you don't need to worry about that. That's what you need to enter in the function node:
 
