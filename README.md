@@ -250,4 +250,4 @@ Where `EVENT_HANDLERS` is an array of arrays. Each of this arrays can have up to
 
 ### ReactRED.Props
 
-See (js-props-validator)[https://github.com/cokeSchlumpf/js-props-validator] for details.
+See [js-props-validator](https://github.com/cokeSchlumpf/js-props-validator) for details.
