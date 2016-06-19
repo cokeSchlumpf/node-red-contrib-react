@@ -1,3 +1,7 @@
+/**
+ * Copyright Michael Wellner <info@michaelwellner.de> 2016.
+ */
+
 import _ from 'lodash';
 import _Props from 'js-props-validator';
 
