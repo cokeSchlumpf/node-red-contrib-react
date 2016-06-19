@@ -69,10 +69,10 @@ describe('ReactRED', function() {
     let result = thing.handle(nodeMessages[0]);
     expect(result.length).toEqual(0);
 
-    result = thing.handleHttp(nodeMessages[1]);
+    result = thing.handle(nodeMessages[1]);
     expect(result.length).toEqual(3);
 
-    result = thing.handleEvent(nodeMessages[2], "timerEvent", {
+    result = thing.handle(nodeMessages[2], "timerEvent", {
       value: 1995
     });
 

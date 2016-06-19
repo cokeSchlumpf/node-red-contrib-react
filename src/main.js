@@ -78,18 +78,14 @@ export const Thing = (thing) => {
       return out;
     },
 
-    handleEvent: (msg, event, params) => {
-      return self._handle(msg, _.assign({}, params, {
-        event: event
-      }));
-    },
-
-    handleHttp: (msg) => {
-      return self._handle(msg, msg.req.query);
-    },
-
-    handle: (msg) => {
-      return self._handle(msg, msg.payload);
+    handle: (msg, event, params) => {
+      if (event) {
+        return self._handle(msg, _.assign({}, params || {}, {
+          event: event
+        }));
+      } else {
+        return self._handle(msg, msg.req ? msg.req.query : msg.payload);
+      }
     }
   });
 
