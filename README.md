@@ -12,11 +12,19 @@ With [node-RED](http://nodered.org/) you can simply connect events from other de
   npm install --save node-red-react
   ```
 
-2. Import the library within a function node:
+2. Edit `settings.js` to make the library available in Node-RED's global context:
+
+```javascript
+functionGlobalContext: {
+  "ReactRED": require("node-red-react")
+},
+```
+
+3. Import the library within a function node:
 
   ```javascript
   var
-    ReactRED = require('node-red-react'),
+    ReactRED = context.global.get('ReactRED'),
     Props = ReactRED.Props,
     Thing = ReactRED.Thing,
     bindEvent = ReactRED.bindEvent;
@@ -25,13 +33,13 @@ With [node-RED](http://nodered.org/) you can simply connect events from other de
 3. Initialize a Thing in the global context:
 
   ```javascript
-  context.global.thing = context.global.thing || Thing({ ... });
+  context.global.set('thing', context.global.get('thing') || Thing({ ... }));
   ```
 
 4. Return `handle(msg)` as result of your function node.
 
   ```javascript
-  return context.global.thing.handle(msg);
+  return [ context.global.get('thing').handle(msg) ];
   ```
 
 See example and API below.
@@ -66,12 +74,12 @@ How would the logic between your devices look like? If you think about it, it ca
 
 ```javascript
 var
-  ReactRED = require('node-red-react'),
+  ReactRED = context.global.get('ReactRED'),
   Props = ReactRED.Props,
   Thing = ReactRED.Thing,
   bindEvent = ReactRED.bindEvent;
 
-context.global.home = context.global.home || Thing({
+context.global.set('thing', context.global.get('thing') || Thing({
   _stateTypes: {
     currentTime: bindEvent(
       Props.number().withDefault(0), [
@@ -104,9 +112,9 @@ context.global.home = context.global.home || Thing({
       lightsBedroomOn: !this.sunIsShining && this.somebodyAtHome
     };
   }
-});
+}));
 
-return context.global.home.handle(msg);
+return [ context.global.get('thing').handle(msg) ];
 ```
 
 With this snippet the function node will emit messages everytime one of your lights needs to be turned on or off if it receives messages from your input devices like:
@@ -153,7 +161,11 @@ Those messages can easily be routed to an action to turn the light actually on. 
 
 ## API
 
-### ReactRED.Thing(configuration)
+### ReactRED.Thing
+
+```
+var thing = ReactRED.Thing(configuration);
+```
 
 Creates a new thing. `configuration` must have at least the following values:
 
