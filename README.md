@@ -14,11 +14,11 @@ With [node-RED](http://nodered.org/) you can simply connect events from other de
 
 2. Edit `settings.js` to make the library available in Node-RED's global context:
 
-```javascript
-functionGlobalContext: {
-  "ReactRED": require("node-red-react")
-},
-```
+  ```javascript
+  functionGlobalContext: {
+    "ReactRED": require("node-red-react")
+  }
+  ```
 
 3. Import the library within a function node:
 
