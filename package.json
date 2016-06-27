@@ -1,5 +1,5 @@
 {
-  "name": "node-red-react",
+  "name": "node-red-contrib-react",
   "version": "0.0.1",
   "description": "React for IoT.",
   "author": "Michael Wellner <info@michaelwellner.de>",
