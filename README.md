@@ -2,7 +2,7 @@
 
 **node-red-contrib-react** makes it painless to create interactions for your devices in the Internet of Things. Define simple rules how the state of your "Thing" is changed on events and how your "Thing" should behave based on its state.
 
-With [node-RED](http://nodered.org/) you can simply connect events from other devices or services with your configured `node-red-contrib-react` rule engine and design flows to react on emitted events.
+With [Node-RED](http://nodered.org/) you can simply connect events from other devices or services with your configured `node-red-contrib-react` rule engine and design flows to react on emitted events.
 
 ## Usage
 
