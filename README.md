@@ -1,22 +1,22 @@
-# node-red-react - Declarative IoT library for Node-RED [![Build Status](https://travis-ci.org/cokeSchlumpf/node-red-react.svg?branch=master)](https://travis-ci.org/cokeSchlumpf/node-red-react) [![dependency status](https://david-dm.org/cokeSchlumpf/node-red-react.svg)](https://david-dm.org/cokeSchlumpf/node-red-react)
+# node-red-contrib-react - Declarative IoT library for Node-RED [![Build Status](https://travis-ci.org/cokeSchlumpf/node-red-contrib-react.svg?branch=master)](https://travis-ci.org/cokeSchlumpf/node-red-contrib-react) [![dependency status](https://david-dm.org/cokeSchlumpf/node-red-contrib-react.svg)](https://david-dm.org/cokeSchlumpf/node-red-contrib-react)
 
-**node-red-react** makes it painless to create interactions for your devices in the Internet of Things. Define simple rules how the state of your "Thing" is changed on events and how your "Thing" should behave based on its state.
+**node-red-contrib-react** makes it painless to create interactions for your devices in the Internet of Things. Define simple rules how the state of your "Thing" is changed on events and how your "Thing" should behave based on its state.
 
-With [node-RED](http://nodered.org/) you can simply connect events from other devices or services with your configured `node-red-react` rule engine and design flows to react on emitted events.
+With [node-RED](http://nodered.org/) you can simply connect events from other devices or services with your configured `node-red-contrib-react` rule engine and design flows to react on emitted events.
 
 ## Usage
 
-1. Install `node-red-react` within your Node-RED project:
+1. Install `node-red-contrib-react` within your Node-RED project:
 
   ```bash
-  npm install --save node-red-react
+  npm install --save node-red-contrib-react
   ```
 
 2. Edit `settings.js` to make the library available in Node-RED's global context:
 
   ```javascript
   functionGlobalContext: {
-    "ReactRED": require("node-red-react")
+    "ReactRED": require("node-red-contrib-react")
   }
   ```
 
@@ -64,13 +64,13 @@ The lights are your output devices. You also have some devices which are sending
 
 * A third very cool device called a clock which sends an event `currentTime` every 5 minutes. This could be realized through a Inject-Node with Node-RED.
 
-### Realization with node-red-react
+### Realization with node-red-contrib-react
 
 Now it would be very simple to wire all these devices within a Node-RED flow:
 
-![Example flow](https://raw.githubusercontent.com/cokeSchlumpf/node-red-react/master/docs/flow.png)
+![Example flow](https://raw.githubusercontent.com/cokeSchlumpf/node-red-contrib-react/master/docs/flow.png)
 
-How would the logic between your devices look like? If you think about it, it can be very complex - At least if you increase the number of possible input events and output devices. With `node-red-react` you don't need to worry about that. That's what you need to enter in the function node:
+How would the logic between your devices look like? If you think about it, it can be very complex - At least if you increase the number of possible input events and output devices. With `node-red-contrib-react` you don't need to worry about that. That's what you need to enter in the function node:
 
 ```javascript
 var
