@@ -1,4 +1,4 @@
-# node-red-contrib-react - Declarative IoT library for Node-RED [![Build Status](https://travis-ci.org/cokeSchlumpf/node-red-contrib-react.svg?branch=master)](https://travis-ci.org/cokeSchlumpf/node-red-contrib-react) [![dependency status](https://david-dm.org/cokeSchlumpf/node-red-contrib-react.svg)](https://david-dm.org/cokeSchlumpf/node-red-contrib-react)
+# node-red-contrib-react - Declarative IoT library for Node-RED [![Build Status](https://travis-ci.org/cokeSchlumpf/node-red-react.svg?branch=master)](https://travis-ci.org/cokeSchlumpf/node-red-react) [![dependency status](https://david-dm.org/cokeSchlumpf/node-red-contrib-react.svg)](https://david-dm.org/cokeSchlumpf/node-red-contrib-react)
 
 **node-red-contrib-react** makes it painless to create interactions for your devices in the Internet of Things. Define simple rules how the state of your "Thing" is changed on events and how your "Thing" should behave based on its state.
 
